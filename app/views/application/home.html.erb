@@ -1,6 +1,5 @@
-<p id="notice"><%= notice %></p>
+<h1>Welcome To The Travel App</h1>
 
-<h1>Destinations</h1>
 
 <% @destinations.each do |destination| %>
   <li><%= link_to "#{destination.location}", destination %>
@@ -10,6 +9,18 @@
     <% end %>
   </li>
 <% end %>
+
+<br></br>
+
+<h3>Most expensive trip: </h3><%= most_expensive %>
+
+<br></br>
+
+<h3>Least expensive trip: </h3><%= least_expensive %>
+
+<br></br>
+
+<%= link_to "See all Travel Agents", agents_path %>
 
 <br></br>
 

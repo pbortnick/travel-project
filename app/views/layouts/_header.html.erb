@@ -1,0 +1,15 @@
+
+<nav class="">
+    <ul>
+      <%= link_to "Home", root_path %><br></br>
+      <% if !!current_user %>
+        Signed in as <%= current_user.email %><br>
+        <%= link_to("Sign out", destroy_user_session_path, :method => :delete) %><br>
+      <% else %>
+        <%= link_to("Sign up", new_user_registration_path) %><br></br>
+        <%= link_to("Sign in", new_user_session_path) %><br></br>
+        <%= link_to("Sign out", destroy_user_session_path, :method => :delete) %><br></br>
+      <% end %>
+
+    </ul>
+</nav>

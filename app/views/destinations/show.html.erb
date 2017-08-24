@@ -1,4 +1,14 @@
-<p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_destination_path(@destination) %> |
-<%= link_to 'Back', destinations_path %>
+<h1><%= @destination.location %></h1><br>
+
+<h3>Price: $<%= @destination.price %></h3><br>
+
+<h3>Length: <%= @destination.trip_length %> days</h3><br>
+
+<h3>Weather Conditions: <%= @destination.weather %></h3><br>
+
+<h3>Agent: <%= @destination.agent.name %></h3>
+
+<% if current_user %>
+  <%= link_to "Take this trip!", trip_path %>
+<% end %>

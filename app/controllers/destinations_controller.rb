@@ -25,29 +25,21 @@ class DestinationsController < ApplicationController
   # POST /destinations.json
   def create
     @destination = Destination.new(destination_params)
-
-    respond_to do |format|
-      if @destination.save
-        format.html { redirect_to @destination, notice: 'Destination was successfully created.' }
-        format.json { render :show, status: :created, location: @destination }
-      else
-        format.html { render :new }
-        format.json { render json: @destination.errors, status: :unprocessable_entity }
-      end
+    if @destination.valid?
+      @destination.save
+      redirect_to root_path
+    else
+      render :new, notice: 'Error in processing destination'
     end
   end
 
   # PATCH/PUT /destinations/1
   # PATCH/PUT /destinations/1.json
   def update
-    respond_to do |format|
-      if @destination.update(destination_params)
-        format.html { redirect_to @destination, notice: 'Destination was successfully updated.' }
-        format.json { render :show, status: :ok, location: @destination }
-      else
-        format.html { render :edit }
-        format.json { render json: @destination.errors, status: :unprocessable_entity }
-      end
+    if @destination.update(destination_params)
+      redirect_to destination_path
+    else
+      render :new, notice: 'Error in processing destination'
     end
   end
 
@@ -61,6 +53,7 @@ class DestinationsController < ApplicationController
     end
   end
 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_destination
@@ -69,6 +62,6 @@ class DestinationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def destination_params
-      params.fetch(:destination, {})
+      params.require(:destination).permit(:location, :price, :trip_length, :weather, :agent_id)
     end
 end

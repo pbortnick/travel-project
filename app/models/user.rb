@@ -1,6 +1,6 @@
-class User < ActiveRecord::Base
-  belongs_to :agent
+class User < ApplicationRecord
+  belongs_to :agent, optional: true
   has_many :destinations, through: :agent
 
-  has_secure_password
+  devise :database_authenticatable, :registerable, :rememberable, :validatable
 end

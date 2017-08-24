@@ -10,12 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170822012742) do
+ActiveRecord::Schema.define(version: 20170823190127) do
 
   create_table "agents", force: :cascade do |t|
     t.string "name"
-    t.integer "destination_id"
-    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -27,13 +25,18 @@ ActiveRecord::Schema.define(version: 20170822012742) do
     t.string "weather"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "agent_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "password_digest"
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "agent_id"
+    t.boolean "admin", default: false
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
 end

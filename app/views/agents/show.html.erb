@@ -1,4 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_agent_path(@agent) %> |
+<%= @agent.name %>
+
+<p>See More Details about:</p>
+<% @agent.destinations.each do |destination| %>
+  <li><%= link_to "#{destination.location}", destination %></li>
+<% end %>
+
+<br></br>
+
 <%= link_to 'Back', agents_path %>
