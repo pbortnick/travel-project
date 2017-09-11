@@ -1,6 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <%= @agent.name %>
+<br>
+
+<p>Total Price of all Destinations: $<%= @total %></p>
 
 <p>See More Details about:</p>
 <% @agent.destinations.each do |destination| %>

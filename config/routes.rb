@@ -9,4 +9,6 @@ Rails.application.routes.draw do
 
   get '/trip' => "application#trip"
 
+  get '/auth/facebook/callback' => 'sessions#create'
+
 end
