@@ -7,3 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 agent1 = Agent.create(name: 'Pam')
+
+agent2 = Agent.create(name: 'Jason')
+
+
+destination1 = Destination.create(location: 'New York City', price: 1000, trip_length: 5, weather: 'varies', agent_id: 1)
+
+destination2 = Destination.create(location: 'California', price: 1500, trip_length: 10, weather: 'warm', agent_id: 4)

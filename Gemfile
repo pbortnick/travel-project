@@ -8,7 +8,6 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'dotenv-rails'
-gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'bcrypt'
 gem 'devise'

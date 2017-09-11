@@ -7,7 +7,9 @@
 
 <h3>Weather Conditions: <%= @destination.weather %></h3><br>
 
-<h3>Agent: <%= @destination.agent.name %></h3>
+<% if @agent %>
+  <h3>Travel Agent: <%= @destination.agent.name %></h3>
+<% end %>
 
 <% if current_user %>
   <%= link_to "Take this trip!", trip_path %>
