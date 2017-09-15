@@ -13,3 +13,4 @@ This project was designed by pbortnick with the help of the Flatiron School educ
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+# js-travel-project
