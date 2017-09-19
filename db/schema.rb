@@ -26,7 +26,6 @@ ActiveRecord::Schema.define(version: 20170911203338) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "agent_id"
-    t.index ["agent_id"], name: "index_destinations_on_agent_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -36,7 +35,6 @@ ActiveRecord::Schema.define(version: 20170911203338) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "agent_id"
-    t.boolean "admin", default: false
     t.string "provider"
     t.string "uid"
     t.index ["email"], name: "index_users_on_email", unique: true

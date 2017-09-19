@@ -14,7 +14,7 @@ class DestinationsController < ApplicationController
 
   # GET /destinations/new
   def new
-    @destination = Destination.new
+    @destination = Destination.new(agent_id: params[:agent_id])
   end
 
   # GET /destinations/1/edit

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get '/auth/facebook', to: redirect('/users/auth/facebook')
 
   resources :agents do
-    resources :destinations, only: [:show]
+    resources :destinations, only: [:show, :new]
   end
 
   resources :destinations
