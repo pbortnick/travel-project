@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170911203338) do
+ActiveRecord::Schema.define(version: 20170919182437) do
 
   create_table "agents", force: :cascade do |t|
     t.string "name"
@@ -38,8 +38,6 @@ ActiveRecord::Schema.define(version: 20170911203338) do
     t.string "provider"
     t.string "uid"
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["provider"], name: "index_users_on_provider"
-    t.index ["uid"], name: "index_users_on_uid"
   end
 
 end
