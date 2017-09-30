@@ -1,3 +1,6 @@
+## Blog Post
+http://pamelahoneybortnick.com/2017/08/24/rails_portfolio_project_-_travel_agency/
+
 ## Synopsis
 
 This Rails project has models for users, agents, and destination. It allows users to choose a destination given its location, price, length of trip, and weather conditions. Each destination has a travel agent. It uses Devise for login authentication.
